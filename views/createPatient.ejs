@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Patient</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 18vh auto;
+            padding: 20px;
+            
+            background: linear-gradient(111.29deg, rgba(255, 255, 255, 0.53) -1.83%, rgba(255, 255, 255, 0.53) 109.95%);
+      border: 1px solid rgb(211, 211, 211);
+      backdrop-filter: blur(.8rem) saturate(180%);
+      -webkit-backdrop-filter: blur(.8rem) saturate(180%);
+      border-radius: 2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            padding: .5rem 2rem;
+            text-decoration: none;
+            width: fit-content;
+            transition: .2s;
+        }
+
+        .navbar a:hover {
+            scale: 1.5;
+            color: rgb(0, 195, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <a href="/dashboard">Home</a>
+          <a href="/patients">Patient Details</a>
+          <a href="/blood-requirement">Blood Requirement</a>
+        </div>
+
+   
+
+    <form action="/create-patient" method="post" enctype="application/x-www-form-urlencoded">
+        <h2>Add New Patient</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <button type="submit" class="button">Submit</button>
+    </form>
+
+</body>
+
+</html>

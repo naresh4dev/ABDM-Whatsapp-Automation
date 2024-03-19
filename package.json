@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase": "^10.8.0",
+    "langchain": "^0.1.21",
+    "openai": "^4.28.0",
+    "uuid": "^9.0.1",
+    "whatsapp": "^0.0.5-Alpha"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Naresh C",
+  "license": "ISC",
+  "description": ""
+}

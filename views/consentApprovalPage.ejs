@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Access Consent Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container {
+      max-width: 500px;
+      margin: 18vh auto;
+      padding: 20px;
+      background: linear-gradient(111.29deg, rgba(255, 255, 255, 0.53) -1.83%, rgba(255, 255, 255, 0.53) 109.95%);
+      border: 1px solid rgb(211, 211, 211);
+      backdrop-filter: blur(.8rem) saturate(180%);
+      -webkit-backdrop-filter: blur(.8rem) saturate(180%);
+      border-radius: 2rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    #html{
+        display: flex;
+    }
+    #html label{
+        font-weight: normal
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 1rem;
+    }
+
+    .navbar a {
+      color: #f2f2f2;
+      padding: .5rem 2rem;
+      text-decoration: none;
+      width: fit-content;
+      transition: .2s;
+    }
+
+    .navbar a:hover {
+      scale: 1.5;
+      color: rgb(0, 195, 0);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="/dashboard">Home</a>
+      <a href="/patients">Patient Details</a>
+      <a href="/blood-requirement">Blood Requirement</a>
+    </div>
+  </nav> 
+  <div class="container">
+    <h2>File Access Consent Request</h2>
+    <form action="/consent-request" method="post" enctype="application/x-www-form-urlencoded">
+        <h3>Patient details</h3>
+      <label for="patientID">Patient Number:</label>
+      <input type="text" id="patientID" name="patientnum" required>
+      <h3>Request details</h3>  
+      <label>Request Type:</label>
+      <div id="html">
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">View</label><br>
+      </div>
+      <label for="purpose">Purpose:</label>
+      <select id="purpose" name="purpose">
+        <option value="Diagnosis">Diagnosis</option>
+        <option value="Treatment">Treatment</option>
+        <option value="Consultation">Consultation</option>
+        <option value="Others">Others</option>
+      </select>
+      <button type="submit" class="btn">Send Request</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    
+    .tabarea {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+
+    table {
+      border: 1px rgb(255, 255, 255) dashed;
+      padding: .8rem;
+      width: 80%;
+      border-radius: 1rem;
+      background: linear-gradient(111.29deg, rgba(255, 255, 255, 0.53) -1.83%, rgba(255, 255, 255, 0.53) 109.95%);
+      border: 1px solid rgb(211, 211, 211);
+      backdrop-filter: blur(.8rem) saturate(180%);
+      -webkit-backdrop-filter: blur(.8rem) saturate(180%);
+      border-radius: 2rem;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      width: 20%;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10%;
+      margin-top: 1.5%;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 1rem;
+    }
+
+    .navbar a {
+      color: #f2f2f2;
+      padding: .5rem 2rem;
+      text-decoration: none;
+      width: fit-content;
+      transition: .2s;
+    }
+
+    .navbar a:hover {
+      scale: 1.5;
+      color: rgb(0, 195, 0);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="/dashboard">Home</a>
+      <a href="/patients">Patient Details</a>
+      <a href="/blood-requirement">Blood Requirement</a>
+    </div>
+  </nav>
+  <center>
+    <h2>List of All Patients</h2>
+
+  </center>
+  
+  <div class="tabarea">
+    <table>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Contact Number</th>
+      </tr>
+     <% locals.patients.forEach((patient,i) => { %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= patient.name %></td>
+        <td><%=  patient.age %></td>
+        <td><%= patient.gender%></td>
+        <td><%= patient.contactNumber %></td>
+      </tr>
+      <% }) %>
+      <!-- Add more rows for additional patients -->
+    </table>
+    <div class="btns" style="display: flex;">
+      <a class="button" href="/create-patient">Create New Patient</a>
+      <a class="button" href="/consent-request">Connect with Patient</a>
+
+    </div>
+    <h2>List of My Patients</h2>
+    <div class="tabarea">
+      <table>
+        <tr>
+          <th>S.No</th>
+          <th>Patient Name</th>
+          <th>Patient Number</th>
+        </tr>
+       <% locals.user_data.forEach((patient,i) => { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= patient.name %></td>
+          <td><%= patient.contactNumber %></td>
+        </tr>
+        <% }) %>
+        <!-- Add more rows for additional patients -->
+      </table>
+    </div>
+  </div>
+
+  
+
+  
+
+</body>
+
+</html>

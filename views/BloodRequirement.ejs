@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Requirement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+        margin-top: 30vh;
+      max-width: 500px;
+      margin: 18vh auto;
+      padding: 20px;
+      background: linear-gradient(111.29deg, rgba(255, 255, 255, 0.53) -1.83%, rgba(255, 255, 255, 0.53) 109.95%);
+      border: 1px solid rgb(211, 211, 211);
+      backdrop-filter: blur(.8rem) saturate(180%);
+      -webkit-backdrop-filter: blur(.8rem) saturate(180%);
+      border-radius: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 1rem;
+    }
+
+    .navbar a {
+      color: #f2f2f2;
+      padding: .5rem 2rem;
+      text-decoration: none;
+      width: fit-content;
+      transition: .2s;
+    }
+
+    .navbar a:hover {
+      scale: 1.5;
+      color: rgb(0, 195, 0);
+    }
+  </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <a href="/dashboard">Home</a>
+          <a href="/patients">Patient Details</a>
+          <a href="/blood-requirement">Blood Requirement</a>
+        </div>
+      </nav> 
+  <div class="container">
+    <h2>Blood Requirement</h2>
+    <form action="/blood-requirement" method="post" enctype="application/x-www-form-urlencoded">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required>
+
+      <label for="bloodType">Blood Type:</label>
+      <select id="bloodType" name="bloodType" required>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+
+      <label for="hospital">Hospital:</label>
+      <input type="text" id="hospital" name="hospital" required>
+
+      <label for="msg">Message:</label>
+      <input type="text" id="msg" name="msg" required>
+
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

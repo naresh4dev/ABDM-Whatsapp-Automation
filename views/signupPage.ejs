@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 50vw;
+            margin: 0 auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input {
+            width: 45%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: 
+            #45a049;
+        }
+
+        .toggle-form {
+            margin-top: 20px;
+        }
+
+        .page {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inp {
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            padding: .2rem;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+
+        <form action="/signup" method="post" enctype="application/x-www-form-urlencoded">
+            <h1>Signup</h1>
+            <div class="inp">
+                <label for="fname">First name</label>
+                <input type="text" id="fname" name="fname">
+            </div>
+            <div class="inp">
+                <label for="lname">Last name</label>
+                <input type="text" id="lname" name="lname">
+            </div>
+            <div class="inp">
+                <label for="dob">Date of birth</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+            <div class="inp">
+                <label for="gender">Gender</label>
+                <select name="gender">
+                    <option value="">Please select one…</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="non-binary">Non-Binary</option>
+                    <option value="other">Other</option>
+                    <option value="Prefer not to answer">Perfer not to Answer</option>
+                </select>
+            </div>
+            <div class="inp">
+                <label for="institute">Institution Name:</label>
+                <input type="text" id="institute" name="institution" required>
+            </div>
+            <div class="inp">
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name ="designation" required>
+            </div>
+            <div class="inp">
+                <label for="email">Email id:</label>
+                <input type="email" name="email" id="" required>
+            </div>
+            <div class="inp">
+                <label for="uname">User name:</label>
+                <input type="text" id="uname" name="uname" required>
+            </div>
+            <div class="inp">
+                <label for="pass">Password:</label>
+                <input type="password" id="pass" name="password" required>
+            </div>
+            <div class="btn">
+                <button type="submit">Sign Up:</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        function toggleForm(formId) {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'none';
+
+            document.getElementById(formId).style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>

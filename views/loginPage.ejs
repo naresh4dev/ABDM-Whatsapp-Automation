@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(111.29deg, rgba(255, 255, 255, 0.53) -1.83%, rgba(255, 255, 255, 0.53) 109.95%);
+      border: 1px solid rgb(211, 211, 211);
+      backdrop-filter: blur(.8rem) saturate(180%);
+      -webkit-backdrop-filter: blur(.8rem) saturate(180%);
+      border-radius: 2rem;
+        }
+
+        form {
+           
+            padding: 20px;
+            
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        .toggle-form {
+            margin-top: 20px;
+        }
+        .area{
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="area">
+    <div class="container">
+        <form id="loginForm" action="/login" method="post" enctype="application/x-www-form-urlencoded">
+            <h2>Login</h2>
+            <label for="loginUsername">Username/Email</label>
+            <input type="text" id="loginUsername" name="email" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        
+        <div class="toggle-form">
+            <p>Don't have an account? <a href="http://127.0.0.1:5500/signup.html#" onclick="toggleForm('signupForm')">Sign up</a></p>
+        </div>
+    </div>
+   </div>
+    
+    <script>
+        function toggleForm(formId) {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'none';
+    
+            document.getElementById(formId).style.display = 'block';
+        }
+    </script>
+
+        
+</body>
+</html>
